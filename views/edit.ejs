@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div class="container">
+    <h1>Edit Articel</h1>
+    <form action="/edit/<%= blog._id %>" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="title" name="title" value="<%= blog.title %>">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" class="form-control" id="description" name="description" value="<%= blog.description %>">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+  <h1>Blogging world</h1>
+
+  <div class="container m-3">
+  <a href="/create" class="btn btn-primary">Create Article</a>
+  <% if(blog) { %>
+    <% blog.forEach(e=>{ %>
+      <div class="card m-2" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= e.title %></h5>
+          <p class="card-text"><%= e.description.substring(0, 10)+'...' %><a href="/<%= e._id %>">View More</a></p>
+          <a href="/edit/<%= e._id %>" class="card-link">Edit</a>
+          <a href="/delete/<%= e._id %>" class="card-link text-danger">Delete</a>
+        </div>
+      </div>
+    <%})%>
+    <% } %>
+  
+</div>
+
+  
+<%- include('partials/footer') %>
